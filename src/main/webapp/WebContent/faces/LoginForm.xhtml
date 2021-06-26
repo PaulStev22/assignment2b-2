@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title><ui:insert name="title">Login</ui:insert></title>
+		<h:outputStylesheet name="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Syncopate" />  
+</h:head>
+<h:body>
+
+    <h:panelGroup id="page" layout="block">
+    	<h:panelGroup id="header" layout="block">
+    		<ui:insert name = "header" >
+      	     	<ui:include src = "/WEB-INF/templates/commonHeader.xhtml" />
+   			</ui:insert>
+        </h:panelGroup>
+		
+    		<div align="center"> 
+	<form method="post" action="j_security_check">
+		Username: <h:inputText id="j_username" autocomplete="on" /><br/>
+		Password: <h:inputSecret id="j_password" autocomplete="off" /><br/>
+		<h:commandButton type="submit" value="Submit"/>
+	</form>
+</div>
+
+    	<h:panelGroup id="footer" layout="block">
+	      	<ui:insert name = "footer" >
+            	<ui:include src = "/WEB-INF/templates/commonFooter.xhtml" />
+         	</ui:insert>
+         </h:panelGroup>
+         </h:panelGroup>
+</h:body>
+		
+</html>

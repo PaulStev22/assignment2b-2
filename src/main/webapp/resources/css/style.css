@@ -1,0 +1,66 @@
+@charset "ISO-8859-1";
+
+#commonHeader
+{
+  color: #F5F5F5;
+  background-color: #2F4F4F;
+  text-align: center;
+  font-family: Syncopate;
+}
+#commonFooter
+{
+  color: #2F4F4F;
+  text-align: center;
+  font-family: Syncopate;
+}
+.commonTable {   
+   border-collapse:collapse;
+   border:1px solid #000000;
+}
+
+.commonTableHeader {
+   text-align:center;
+   background:none repeat scroll 0 0 #B5B5B5;
+   border-bottom:1px solid #000000;  
+   padding:2px;
+}
+
+.commonTableOddRow {
+   text-align:center;
+   background:none repeat scroll 0 0 #FFFFFF;	
+}
+
+.commonTableEvenRow {
+   text-align:center;
+   background:none repeat scroll 0 0 #D3D3D3;
+}
+
+
+
+
+
+ul#list-nav 
+{
+  margin:0px;
+  padding:0;
+  list-style:none;
+  width:100%;
+}
+ul#list-nav li {
+  display:inline
+}
+ul#list-nav li a {
+ text-decoration:none;
+ font-style: italic;
+ padding:5px 0;
+ width:200px;
+ background:#333300;
+ color:#eee;
+ float:left;
+}
+p
+{
+	text-align: center;
+	font-weight: bold;
+}
+

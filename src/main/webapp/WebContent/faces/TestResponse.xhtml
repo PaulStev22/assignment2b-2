@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W#C//DTD XHTML 1.0 TRANSITIONAL//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 	xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:ui ="http://java.sun.com/jsf/facelets"
+		xmlns:f ="http://java.sun.com/jsf/core"
+		xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Login Success</title>
+	<h:outputStylesheet name="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Syncopate" />  
+</h:head>
+    <h:panelGroup id="page" layout="block">
+    	<h:panelGroup id="header" layout="block">
+    		<ui:insert name = "header" >
+      	     	<ui:include src = "/WEB-INF/templates/commonHeader.xhtml" />
+   			</ui:insert>
+        </h:panelGroup>
+		<p><br /><br /><br />Hello #{user.firstName} Your Orders are: </p>
+		
+		
+		<h:head>
+    	<h:outputStylesheet library="css" name="table-style.css"  />
+    </h:head>
+    <h:body>
+    	
+    	<h1>Orders</h1>
+    	
+    		<h:dataTable value="#{formController.service.orders}" var="order"
+    			styleClass="order-table"
+    			headerClass="order-table-header"
+    			rowClasses="order-table-odd-row,order-table-even-row"
+    		>
+
+    			<h:column>
+    				<!-- column header -->
+    				<f:facet name="header">Order Number</f:facet>
+    				<!-- row record -->
+    				#{order.orderNumber}
+    			</h:column>
+    			
+    			<h:column>
+    				<f:facet name="header">Product Name</f:facet>
+    				#{order.productName}
+    			</h:column>
+    			
+    			<h:column>
+    				<f:facet name="header">Price</f:facet>
+    				#{order.price}
+    			</h:column>
+    			
+    			<h:column>
+    				<f:facet name="header">Quantity</f:facet>
+    				#{order.quantity}
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">ID Property</f:facet>
+    				#{order.ID}
+    			</h:column>
+    		
+    		</h:dataTable>
+    		
+    		<h:form><h:commandButton value="Send Order" action="OrderResponse.xhtml"/></h:form>
+    		
+    		<h:form><h:commandButton value="Go Back" action="LoginForm.xhtml"/></h:form>
+    		
+    		<h:form><h:commandButton value="Log Out" action="#{formController.onLogoff()}"/></h:form>
+    </h:body>
+   
+		
+   
+    	<h:panelGroup id="footer" layout="block">
+	      	<ui:insert name = "footer" >
+            	<ui:include src = "/WEB-INF/templates/commonFooter.xhtml" />
+         	</ui:insert>
+         </h:panelGroup>
+         </h:panelGroup>
+
+</html>
